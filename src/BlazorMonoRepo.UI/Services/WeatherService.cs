@@ -20,13 +20,16 @@ public class WeatherService : IWeatherService
     {
         try
         {
+            Console.WriteLine($"[WeatherService] BaseAddress: {_httpClient.BaseAddress}");
+            Console.WriteLine($"[WeatherService] Requesting: {_httpClient.BaseAddress}weatherforecast");
             var response = await _httpClient.GetFromJsonAsync<WeatherForecast[]>("weatherforecast");
             return response ?? Array.Empty<WeatherForecast>();
         }
         catch (Exception ex)
         {
-            // Log the exception in a real application
-            Console.WriteLine($"Error fetching weather data: {ex.Message}");
+            Console.WriteLine($"[WeatherService] Exception Type: {ex.GetType().FullName}");
+            Console.WriteLine($"[WeatherService] Exception Message: {ex.Message}");
+            Console.WriteLine($"[WeatherService] Stack Trace: {ex.StackTrace}");
             return Array.Empty<WeatherForecast>();
         }
     }

@@ -14,7 +14,7 @@ builder.Services.AddHttpClient<IWeatherService, WeatherService>(client =>
     client.BaseAddress = new Uri(apiBaseUrl);
 });
 
-builder.Services.AddScoped<IWeatherService, WeatherService>();
+
 
 var app = builder.Build();
 
