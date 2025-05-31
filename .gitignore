@@ -408,5 +408,8 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
+# AI/Copilot
+
+
 # Logs
 *.log
