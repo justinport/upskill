@@ -1,5 +1,6 @@
 using BlazorMonoRepo.UI.Components;
 using BlazorMonoRepo.UI.Services;
+using BlazorMonoRepo.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

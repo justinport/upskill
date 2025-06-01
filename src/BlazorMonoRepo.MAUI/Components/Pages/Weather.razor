@@ -1,0 +1,18 @@
+﻿@page "/weather"
+@using BlazorMonoRepo.Components
+@using BlazorMonoRepo.Shared.Models
+@using BlazorMonoRepo.Shared.Services
+@inject IWeatherService WeatherService
+
+<PageTitle>Weather</PageTitle>
+
+<WeatherComponent Forecasts="forecasts" />
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await WeatherService.GetWeatherForecastAsync();
+    }
+}

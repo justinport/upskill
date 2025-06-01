@@ -1,11 +1,7 @@
 using BlazorMonoRepo.Shared.Models;
+using BlazorMonoRepo.Shared.Services;
 
 namespace BlazorMonoRepo.UI.Services;
-
-public interface IWeatherService
-{
-    Task<WeatherForecast[]> GetWeatherForecastAsync();
-}
 
 public class WeatherService : IWeatherService
 {
@@ -20,16 +16,13 @@ public class WeatherService : IWeatherService
     {
         try
         {
-            Console.WriteLine($"[WeatherService] BaseAddress: {_httpClient.BaseAddress}");
-            Console.WriteLine($"[WeatherService] Requesting: {_httpClient.BaseAddress}weatherforecast");
+            WeatherServiceHelpers.LogApiRequest("WeatherService", _httpClient.BaseAddress?.ToString(), "weatherforecast");
             var response = await _httpClient.GetFromJsonAsync<WeatherForecast[]>("weatherforecast");
             return response ?? Array.Empty<WeatherForecast>();
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[WeatherService] Exception Type: {ex.GetType().FullName}");
-            Console.WriteLine($"[WeatherService] Exception Message: {ex.Message}");
-            Console.WriteLine($"[WeatherService] Stack Trace: {ex.StackTrace}");
+            WeatherServiceHelpers.LogWeatherServiceError("WeatherService", ex);
             return Array.Empty<WeatherForecast>();
         }
     }
