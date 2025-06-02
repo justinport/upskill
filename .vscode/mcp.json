@@ -1,0 +1,205 @@
+{
+  "servers": {
+    // ===== FILE SYSTEM & PROJECT MANAGEMENT =====
+    
+    // Provides secure file system access and operations for reading, writing, and managing files
+    // Usage examples:
+    // - "Read the contents of my package.json file"
+    // - "Create a new React component in src/components/"
+    // - "Find all TypeScript files in my project"
+    // - "Update the README.md with deployment instructions"
+    "filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/Users/justinport"],
+      "env": {}
+    },
+
+    // ===== VERSION CONTROL & CODE COLLABORATION =====
+    
+    // Integrates with GitHub API for repository management, issues, PRs, and code operations
+    // Usage examples:
+    // - "Create a new issue for the bug I just described"
+    // - "List all open pull requests in my repository"
+    // - "Check the status of GitHub Actions workflows"
+    // - "Create a new branch for feature development"
+    // - "Search for code snippets across repositories"
+    "github": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "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"
+      }
+    },
+
+    // ===== AI MEMORY & CONTEXT =====
+    
+    // Provides persistent memory capabilities using knowledge graphs for storing and retrieving conversation context
+    // Usage examples:
+    // - "Remember that I prefer TypeScript over JavaScript"
+    // - "What did we discuss about database optimization last week?"
+    // - "Store this API design pattern for future reference"
+    // - "Recall my coding style preferences"
+    "memory": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-memory"],
+      "env": {}
+    },
+
+    // ===== WEB AUTOMATION & TESTING =====
+    
+    // Enables web browser automation and scraping using Puppeteer for web interactions
+    // Usage examples:
+    // - "Take a screenshot of my deployed website"
+    // - "Test the login flow on my web application"
+    // - "Scrape competitor pricing from their website"
+    // - "Automate form submissions for testing"
+    // - "Check if my site is responsive on different screen sizes"
+    "puppeteer": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-puppeteer"],
+      "env": {}
+    },
+
+    // ===== COMPREHENSIVE SEARCH & RESEARCH =====
+    
+    // Provides comprehensive search capabilities across various data sources and formats
+    // Usage examples:
+    // - "Search for the latest news on AI advancements"
+    // - "Find recent articles about React 19 features"
+    // - "Research best practices for Node.js performance"
+    // - "Look up current market trends in web development"
+    "everything": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-everything"],
+      "env": {}
+    },
+
+    // ===== STRUCTURED PROBLEM SOLVING =====
+    
+    // Enables structured step-by-step thinking and reasoning processes for complex development tasks
+    // Usage examples:
+    // - "Help me architect a microservices solution"
+    // - "Plan the database schema for my e-commerce app"
+    // - "Break down this complex algorithm implementation"
+    // - "Design a CI/CD pipeline for my project"
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-sequential-thinking"],
+      "env": {}
+    },
+
+    // ===== DOCKER & CONTAINERIZATION =====
+    
+    // Docker server for container management, image operations, and deployment automation
+    // Usage examples:
+    // - "List all running Docker containers"
+    // - "Build and push a Docker image for my app"
+    // - "Start a new container from an image"
+    // - "Remove unused Docker images and volumes"
+    "docker": {
+      "command": "npx",
+      "args": ["ckreiling/mcp-server-docker"],
+      "env": {}
+    }
+
+    // ===== RECOMMENDED ADDITIONAL SERVERS FOR FULL-STACK DEVELOPMENT =====
+    // Uncomment and configure the servers below that would benefit your workflow:
+
+    // DATABASE MANAGEMENT
+    // PostgreSQL server for database operations and schema management
+    // "postgres": {
+    //   "command": "npx",
+    //   "args": ["@modelcontextprotocol/server-postgres", "postgresql://localhost:5432/your_database"],
+    //   "env": {}
+    // },
+
+    // DOCKER & CONTAINERIZATION
+    // Docker server for container management and deployment
+    // "docker": {
+    //   "command": "npx",
+    //   "args": ["ckreiling/mcp-server-docker"],
+    //   "env": {}
+    // },
+
+    // API TESTING & MONITORING
+    // Postman server for API testing and collection management
+    // "postman": {
+    //   "command": "npx",
+    //   "args": ["shannonlal/mcp-postman"],
+    //   "env": {
+    //     "POSTMAN_API_KEY": "your_postman_api_key"
+    //   }
+    // },
+
+    // REAL-TIME WEB SEARCH
+    // Tavily search for up-to-date web search and research
+    // "tavily": {
+    //   "command": "npx",
+    //   "args": ["@modelcontextprotocol/server-tavily"],
+    //   "env": {
+    //     "TAVILY_API_KEY": "your_tavily_api_key"
+    //   }
+    // },
+
+    // KUBERNETES MANAGEMENT
+    // Kubernetes server for cluster management and deployment
+    // "kubernetes": {
+    //   "command": "npx",
+    //   "args": ["Flux159/mcp-server-kubernetes"],
+    //   "env": {}
+    // },
+
+    // MONITORING & OBSERVABILITY
+    // Grafana server for dashboard and metrics management
+    // "grafana": {
+    //   "command": "npx",
+    //   "args": ["@modelcontextprotocol/server-grafana"],
+    //   "env": {
+    //     "GRAFANA_URL": "your_grafana_url",
+    //     "GRAFANA_API_KEY": "your_grafana_api_key"
+    //   }
+    // },
+
+    // TASK MANAGEMENT
+    // Linear server for project management and issue tracking
+    // "linear": {
+    //   "command": "npx",
+    //   "args": ["@linear/mcp-server"],
+    //   "env": {
+    //     "LINEAR_API_KEY": "your_linear_api_key"
+    //   }
+    // },
+
+    // CLOUD INFRASTRUCTURE
+    // AWS server for cloud resource management
+    // "aws": {
+    //   "command": "npx",
+    //   "args": ["@modelcontextprotocol/server-aws"],
+    //   "env": {
+    //     "AWS_ACCESS_KEY_ID": "your_aws_access_key",
+    //     "AWS_SECRET_ACCESS_KEY": "your_aws_secret_key",
+    //     "AWS_REGION": "us-east-1"
+    //   }
+    // },
+
+    // SLACK INTEGRATION
+    // Slack server for team communication and notifications
+    // "slack": {
+    //   "command": "npx",
+    //   "args": ["korotovsky/slack-mcp-server"],
+    //   "env": {
+    //     "SLACK_BOT_TOKEN": "your_slack_bot_token"
+    //   }
+    // },
+
+    // REDIS CACHING
+    // Redis server for cache management and data operations
+    // "redis": {
+    //   "command": "npx",
+    //   "args": ["@modelcontextprotocol/server-redis"],
+    //   "env": {
+    //     "REDIS_URL": "redis://localhost:6379"
+    //   }
+    // }
+  }
+}

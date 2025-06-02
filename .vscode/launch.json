@@ -1,0 +1,83 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch API",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-solution",
+            "program": "${workspaceFolder}/src/BlazorMonoRepo.API/bin/Debug/net9.0/BlazorMonoRepo.API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/BlazorMonoRepo.API",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Launch UI",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-solution",
+            "program": "${workspaceFolder}/src/BlazorMonoRepo.UI/bin/Debug/net9.0/BlazorMonoRepo.UI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/BlazorMonoRepo.UI",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "MAUI iOS - Build, Deploy & Run",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "start-maui-ios-debug",
+            "program": "/bin/echo",
+            "args": ["✅ MAUI iOS app launching in simulator..."],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "presentation": {
+                "group": "mobile",
+                "order": 1
+            }
+        },
+        {
+            "name": "Attach to API Process",
+            "type": "coreclr",
+            "request": "attach",
+            "processName": "BlazorMonoRepo.API"
+        },
+        {
+            "name": "Attach to UI Process",
+            "type": "coreclr",
+            "request": "attach",
+            "processName": "BlazorMonoRepo.UI"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch Both (API + UI)",
+            "configurations": ["Launch API", "Launch UI"],
+            "stopAll": true,
+            "presentation": {
+                "group": "web-stack",
+                "order": 1
+            }
+        }
+    ]
+}
